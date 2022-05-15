@@ -13,7 +13,7 @@ import com.educandoweb.course.entities.Product;
 import com.educandoweb.course.services.ProductService;
 
 @RestController
-@RequestMapping(value="/products")
+@RequestMapping(value = "/products")
 public class ProductResource {
 
 	@Autowired
@@ -25,7 +25,7 @@ public class ProductResource {
 		return ResponseEntity.ok().body(product);
 	}
 	
-	@GetMapping(value="{id}")
+	@GetMapping(value = "/{id}")
 	public ResponseEntity<Product> findById(@PathVariable Long id){
 		Product product = service.findById(id);
 		return ResponseEntity.ok().body(product);
